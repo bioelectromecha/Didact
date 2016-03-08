@@ -1,4 +1,4 @@
-package com.didactapp.didact.subject;
+package com.didactapp.didact;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,15 +8,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.apkfuns.logutils.LogUtils;
-import com.didactapp.didact.R;
 import com.didactapp.didact.exercise.ExerciseActivity;
+import com.didactapp.didact.subject.SubjectContent;
+import com.didactapp.didact.subject.SubjectFragment;
 
-public class SubjectActivity extends AppCompatActivity implements SubjectFragment.OnSubjectInteractionListener {
+public class MainActivity extends AppCompatActivity implements SubjectFragment.OnSubjectInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.subject_layout);
+        setContentView(R.layout.mainactivity_layout);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     }
