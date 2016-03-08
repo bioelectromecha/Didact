@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.didactapp.didact.LearnActivity">
+
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:layout_marginTop="?attr/actionBarSize"
+        android:id="@+id/youtube_player"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+    />
+    <TextView
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_width="wrap_content"
+        android:textAlignment="center"
+        android:layout_height="wrap_content"
+        android:id="@+id/learn_text_view"
+        android:layout_weight="1"
+        android:text="laslalallalalalalalaladfsdfdsfsdfsdfsdfdsfsdsgs
+        fdfafafasfsafa fafjafjafb fajfkja;fbajf;kj a;fsbjfa
+        fafn;sfjasbfas;faj a;fkafk;asjfasjk;s aj;fna;fasn;fa;bfa
+        fak'fsa'asfaskfaks'sfkas
+        asldnaslndlasnlkdank/dla ak/sldanslkdnasnd alkd/akdlak //kldaskdl lk
+        sd;ajd;sadnkaslndkas anksdn'sadkad kadk'as'kd alalalaalala laslalal
+        lalalalalalaladfsdfdsfsdfsdfsdfdsfsdsgs
+        fdfafafasfsafa fafjafjafb fajfkja;fbajf;kj a;fsbjfa
+        fafn;sfjasbfas;faj a;fkafk;asjfasjk;s aj;fna;fasn;fa;bfa
+        fak'fsa'asfaskfaks'sfkas
+        asldnaslndlasnlkdank/dla ak/sldanslkdnasnd alkd/akdlak //kldaskdl lk
+        sd;ajd;sadnkaslndkas anksdn'sadkad kadk'as'kd alalalaalala"
+    />
+
+</LinearLayout>

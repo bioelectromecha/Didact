@@ -1,0 +1,27 @@
+<com.wefika.flowlayout.FlowLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="start|top"
+    tools:context=".test.TestFillFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_blank_fragment"
+        android:layout_gravity="center_vertical"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:imeOptions="actionDone"
+        android:layout_gravity="center_vertical"
+        android:singleLine="true"
+        android:maxLength="8"
+        android:maxLines="1"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_blank_fragment"
+        android:layout_gravity="center_vertical"/>
+</com.wefika.flowlayout.FlowLayout>
