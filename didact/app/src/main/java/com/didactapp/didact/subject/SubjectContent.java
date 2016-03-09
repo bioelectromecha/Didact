@@ -41,7 +41,7 @@ public class SubjectContent {
      * A dummy item representing a piece of content.
      */
     public static class Subject {
-        public final int imageId = R.mipmap.ic_launcher;
+        public final int imageId = R.drawable.progress;
         public final String id;
         public final String content;
         public final String details;
