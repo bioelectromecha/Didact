@@ -24,7 +24,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements
-        SubjectFragment.OnSubjectInteractionListener, ProfileFragment.OnFragmentInteractionListener,
+        SubjectFragment.OnSubjectInteractionListener,
+        ProfileFragment.OnFragmentInteractionListener,
         RankingFragment.OnListFragmentInteractionListener,
         ViewPager.OnPageChangeListener, TabHost.OnTabChangeListener{
 
@@ -84,7 +85,6 @@ public class MainActivity extends AppCompatActivity implements
             tabHost.addTab(tabSpec);
         }
         tabHost.setOnTabChangedListener(this);
-
     }
 
     private class FakeContent implements TabHost.TabContentFactory{
