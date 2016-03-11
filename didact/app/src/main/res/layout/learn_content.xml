@@ -19,18 +19,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/learn_text_view"
         android:layout_weight="1"
-        android:text="laslalallalalalalalaladfsdfdsfsdfsdfsdfdsfsdsgs
-        fdfafafasfsafa fafjafjafb fajfkja;fbajf;kj a;fsbjfa
-        fafn;sfjasbfas;faj a;fkafk;asjfasjk;s aj;fna;fasn;fa;bfa
-        fak'fsa'asfaskfaks'sfkas
-        asldnaslndlasnlkdank/dla ak/sldanslkdnasnd alkd/akdlak //kldaskdl lk
-        sd;ajd;sadnkaslndkas anksdn'sadkad kadk'as'kd alalalaalala laslalal
-        lalalalalalaladfsdfdsfsdfsdfsdfdsfsdsgs
-        fdfafafasfsafa fafjafjafb fajfkja;fbajf;kj a;fsbjfa
-        fafn;sfjasbfas;faj a;fkafk;asjfasjk;s aj;fna;fasn;fa;bfa
-        fak'fsa'asfaskfaks'sfkas
-        asldnaslndlasnlkdank/dla ak/sldanslkdnasnd alkd/akdlak //kldaskdl lk
-        sd;ajd;sadnkaslndkas anksdn'sadkad kadk'as'kd alalalaalala"
+        android:text="0101010101010101010110 0101010101010 01010101010"
     />
 
 </LinearLayout>

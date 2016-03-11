@@ -4,7 +4,7 @@ import android.content.Context;
 
 import com.apkfuns.logutils.LogUtils;
 import com.didactapp.didact.R;
-import com.didactapp.didact.MyDBHandler;
+import com.didactapp.didact.data.MyDBHandler;
 
 import java.util.ArrayList;
 import java.util.List;

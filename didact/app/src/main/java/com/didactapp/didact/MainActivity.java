@@ -1,17 +1,16 @@
 package com.didactapp.didact;
 
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.HorizontalScrollView;
-import android.widget.TabHost;
 
 import com.apkfuns.logutils.LogUtils;
 import com.didactapp.didact.dummy.DummyContent;
@@ -23,98 +22,66 @@ import com.didactapp.didact.subject.SubjectFragment;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class MainActivity extends AppCompatActivity implements
         SubjectFragment.OnSubjectInteractionListener,
         ProfileFragment.OnFragmentInteractionListener,
-        RankingFragment.OnListFragmentInteractionListener,
-        ViewPager.OnPageChangeListener, TabHost.OnTabChangeListener{
+        RankingFragment.OnListFragmentInteractionListener{
 
-    ViewPager viewPager;
-    TabHost tabHost;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
 
-    @Override
-    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-    }
-
-    @Override
-    public void onPageSelected(int selectedItem) {
-        tabHost.setCurrentTab(selectedItem);
-    }
-
-    //viewpage listener
-    @Override
-    public void onPageScrollStateChanged(int state) {
-
-    }
-
-    //tabhost listener
-    @Override
-    public void onTabChanged(String tabId) {
-        int selectedItem = tabHost.getCurrentTab();
-        viewPager.setCurrentItem(selectedItem);
-
-        HorizontalScrollView hScrollView = (HorizontalScrollView) findViewById(R.id.h_scroll_view);
-        View tabView = tabHost.getCurrentTabView();
-        int scrollPos = tabView.getLeft()-
-                (hScrollView.getWidth()-tabView.getWidth())/2;
-        hScrollView.smoothScrollTo(scrollPos,0 );
-
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mainactivity_layout);
 
-        initViewPager();
-        initTabHost();
+        viewPager = (ViewPager) findViewById(R.id.viewpager);
+        setupViewPager(viewPager);
+
+        tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(viewPager);
+    }
+    private void setupViewPager(ViewPager viewPager) {
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.addFragment(new SubjectFragment(), "Subjects");
+        adapter.addFragment(new ProfileFragment(), "Profile");
+        adapter.addFragment(new RankingFragment(), "Ranking");
+        viewPager.setAdapter(adapter);
     }
 
-    private void initTabHost(){
-        tabHost = (TabHost) findViewById(R.id.tabHost);
-        tabHost.setup();
 
-        String[] tabNames = {"Subjects", "Profile", "Rankings"};
+    class ViewPagerAdapter extends FragmentPagerAdapter {
+        private final List<Fragment> mFragmentList = new ArrayList<>();
+        private final List<String> mFragmentTitleList = new ArrayList<>();
 
-        for(int i=0; i<tabNames.length;i++){
-            TabHost.TabSpec tabSpec;
-            tabSpec = tabHost.newTabSpec(tabNames[i]);
-            tabSpec.setIndicator(tabNames[i]);
-            tabSpec.setContent(new FakeContent(getApplicationContext()));
-            tabHost.addTab(tabSpec);
+        public ViewPagerAdapter(FragmentManager manager) {
+            super(manager);
         }
-        tabHost.setOnTabChangedListener(this);
-    }
 
-    private class FakeContent implements TabHost.TabContentFactory{
-
-        Context mcontext;
-
-        public FakeContent(Context context){
-            mcontext=context;
-        }
         @Override
-        public View createTabContent(String tag) {
-            View fakeView = new View(mcontext);
-            fakeView.setMinimumHeight(0);
-            fakeView.setMinimumWidth(0);
-            return fakeView;
+        public Fragment getItem(int position) {
+            return mFragmentList.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return mFragmentList.size();
+        }
+
+        public void addFragment(Fragment fragment, String title) {
+            mFragmentList.add(fragment);
+            mFragmentTitleList.add(title);
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return mFragmentTitleList.get(position);
         }
     }
 
-    private void initViewPager(){
-        viewPager=(ViewPager)findViewById(R.id.view_pager);
-        List<Fragment> listFragments = new ArrayList<Fragment>();
-        listFragments.add( new SubjectFragment());
-        listFragments.add(new ProfileFragment());
-        listFragments.add(new RankingFragment());
-        MyFragmentPagerAdapter myFragmentPagerAdapter = new MyFragmentPagerAdapter(
-                getSupportFragmentManager(), listFragments);
-        viewPager.setAdapter(myFragmentPagerAdapter);
-        viewPager.setOnPageChangeListener(this);
 
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

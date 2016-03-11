@@ -11,15 +11,10 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:tabWidgetStyle">@style/MyTabStyle</item>
     </style>
 
-    <style name="MyTabStyle" parent="@android:style/TextAppearance.Widget.TabWidget">
-        <item name="android:textColor">@color/colorPrimaryText</item>
-        <item name="android:backgroundSplit">@color/colorPrimary</item>
-        <item name="android:childIndicator">@color/white</item>
+    <style name="MyMaterialTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    </style>
-
+    <style name="MyMaterialTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

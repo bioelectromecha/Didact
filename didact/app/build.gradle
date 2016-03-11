@@ -36,4 +36,5 @@ dependencies {
     compile 'com.apkfuns.logutils:library:1.1.0'
     compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
     compile 'com.wefika:flowlayout:0.4.1'
+    compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
 }

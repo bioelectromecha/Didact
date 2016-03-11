@@ -20,6 +20,7 @@ import com.didactapp.didact.exercise.ExerciseContent;
  * interface.
  */
 public class ExerciseFragment extends Fragment {
+    private String mSubject;
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
     // TODO: Customize parameters
@@ -66,8 +67,10 @@ public class ExerciseFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            String subject = getActivity().getIntent().getStringExtra("subject");
-            recyclerView.setAdapter(new ExerciseAdapter(ExerciseContent.addItems(getContext(),subject), mListener));
+            if (mSubject==null){
+                mSubject = getActivity().getIntent().getStringExtra("subject");
+            }
+            recyclerView.setAdapter(new ExerciseAdapter(ExerciseContent.addItems(getContext(),mSubject), mListener));
         }
         return view;
     }

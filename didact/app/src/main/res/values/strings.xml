@@ -2,9 +2,11 @@
     <string name="app_name">Didact</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_main2">Exercises</string>
-    <string name="title_activity_learn">LearnActivity</string>
+    <string name="title_activity_learn">Learn</string>
     <string name="title_activity_test">Test</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_test_single">TestSingleActivity</string>
+    <string name="title_activity_test_mult">test_mult_content</string>
 </resources>

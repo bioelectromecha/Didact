@@ -25,16 +25,24 @@
             android:name=".exercise.ExerciseActivity"
             android:label="@string/title_activity_main2"
             android:screenOrientation="portrait"
-            android:theme="@style/MyMaterialTheme" />
+            android:theme="@style/MyMaterialTheme"
+            android:parentActivityName=".MainActivity" >
+        </activity>
         <activity
             android:name=".LearnActivity"
             android:label="@string/title_activity_learn"
-            android:theme="@style/MyMaterialTheme" />
+            android:theme="@style/MyMaterialTheme"
+            android:parentActivityName=".exercise.ExerciseActivity" />
         <activity
-            android:name=".test.TestActivity"
-            android:label="@string/title_activity_test"
-            android:screenOrientation="portrait"
-            android:theme="@style/MyMaterialTheme"></activity>
+            android:name=".TestSingleActivity"
+            android:label="@string/title_activity_test_single"
+            android:theme="@style/MyMaterialTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
